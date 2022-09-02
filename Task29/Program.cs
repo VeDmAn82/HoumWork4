@@ -1,6 +1,6 @@
 ﻿// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран
 
-Console.Write("Введите размер массива: ");
+Console.Write("Enter length Massive: ");
 bool isNumber = int.TryParse(Console.ReadLine(), out int num);
 
 if (!isNumber || num <= 0)
@@ -9,47 +9,25 @@ if (!isNumber || num <= 0)
     return;
 }
 
+PrintArray(GetArray(num));
+
 int[] GetArray(int count)
 {
-    int[] result = new int[count];
+    int[] array = new int[count];
     for (int i = 0; i < count; i++)
     {
-        result[i] = Convert.ToInt32(Console.ReadLine());
+        array[i] = Convert.ToInt32(Console.ReadLine());
     }
-    return result;
+    return array;
 }
-
-PrintArray(GetArray(num));
 
 void PrintArray(int[]array)
 {
-    string str = String.Empty;
+    Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        str += array[i];
+        Console.Write($"{array[i]} ");       
     }
-    Console.WriteLine(str);
+    Console.Write("]");
 }
 
-
-
-
-
-
-
-
-
-// Console.WriteLine("Введите числа: ");
-// int N = 8;
-
-// int[] myArray = new int[N];
-
-// for (int i=0; i<N; i++)
-// {
-//     myArray[i] = Convert.ToInt32(Console.ReadLine());
-// }
- 
-// for (int i = 0; i < N; i++)
-// {
-//     Console.Write("{0} ", myArray[i]);
-// }
